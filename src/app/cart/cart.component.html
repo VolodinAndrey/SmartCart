@@ -1,0 +1,40 @@
+<mat-card class="cart">
+  <mat-card-title>Кошик</mat-card-title>
+  <mat-card-content>
+    <ul class="products">
+      <li *ngFor="let item of products">
+        <div class="products__header">
+        <img src="{{item.product.images[0].image}}">
+        <p class="name">{{item.product.name}}</p>
+        </div>
+        <div class="products__bottom">
+          <button [disabled]="item.count === 1" mat-icon-button (click)="item.count=item.count-1; calcTotal()">
+            <mat-icon>remove</mat-icon>
+          </button>
+          <p class="count">{{item.count}}</p>
+          <button mat-icon-button (click)="item.count=item.count+1; calcTotal()">
+            <mat-icon>add</mat-icon>
+          </button>
+          <p class="price">
+            {{item.product.price}}
+          </p>
+          <button mat-icon-button color="warn" (click)="delete(item.product); calcTotal()">
+            <mat-icon>clear</mat-icon>
+          </button>
+        </div>
+      </li>
+
+
+      <li class="no_border">
+        <p class="extender"></p>
+        <p>Загалом: </p>
+        <p class="price">
+          {{this.total}} грн
+        </p>
+      </li>
+    </ul>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button color="accent" routerLink='/confirm'>Продовжити</button>
+  </mat-card-actions>
+</mat-card>

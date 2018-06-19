@@ -1,0 +1,9 @@
+<p>
+  Дякуємо що обрали наш магазин!
+  <br> Наш оператор обо'язково зв'яжеться з вами.
+  <br> Ваш номер замовлення {{id}}
+</p>
+<p class="actions">
+  <a target="_blank" href="http://88.81.237.101:8000/report/order/{{check_code}}/"><button mat-button>Чек</button></a> 
+  <button routerLink="/" mat-button (click)="dialogRef.close()">Добре</button>
+</p>

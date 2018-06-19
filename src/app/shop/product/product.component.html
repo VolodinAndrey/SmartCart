@@ -1,0 +1,11 @@
+<section class="product__main">
+  <div class="image">
+    <img src="{{product?.images[0].image}}" alt="cake">
+  </div>
+  <div class="desc">
+    <h2>{{product?.name}}</h2>
+    <p>{{product?.description}}</p>
+    <p class="criteria" *ngFor="let item of product?.characteristics">{{item.name}}: {{item.value}}</p>
+    <button mat-raised-button color="warn" (click)="cart.addToCart(product)">{{product?.price}} грн</button>
+  </div>
+</section>

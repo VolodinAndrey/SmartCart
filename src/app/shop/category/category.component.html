@@ -1,0 +1,33 @@
+<section class="header">
+  <a class="back" routerLink="/categories">
+    <mat-icon>keyboard_arrow_left</mat-icon>
+    <span>Всі категорії</span>
+  </a>
+  <h2>{{category?.name}}</h2>
+</section>
+<div class="filters">
+  <div class="filters__group">
+    <a [class.active]="criteria==='likes'" (click)="sortProducts('likes')">Популярні</a>
+    <a [class.active]="criteria==='cheap'" (click)="sortProducts('cheap')">Від дешевих</a>
+    <a [class.active]="criteria==='expensive'" (click)="sortProducts('expensive')">Від дорогих</a>
+  </div>
+</div>
+<section class="products">
+  <div class="product-card" *ngFor="let item of category?.products">
+    <div class="price" routerLink="/product/{{item?.id}}">
+      <span>{{item?.price}} грн</span>
+    </div>
+    <img src="{{item?.images[0]?.image}}" alt="cake" routerLink="/product/{{item?.id}}">
+    <p class="desc" routerLink="/product/{{item?.id}}">{{item?.name}}</p>
+    <div class="controls">
+      <button mat-icon-button (click)='toggleLike(item)'>
+        <mat-icon [class.liked]="!item.liked">favorite</mat-icon>
+      </button>
+      <span class="likes_count">{{item?.likes_count}}</span>
+      <div class="extender"></div>
+      <button mat-raised-button (click)="cart.addToCart(item)">Купить
+        <mat-icon>add_shopping_cart</mat-icon>
+      </button>
+    </div>
+  </div>
+</section>

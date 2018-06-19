@@ -1,0 +1,187 @@
+:host {
+    display: flex;
+    width: 100%;
+    align-content: flex-start;
+    align-items: flex-start;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.header {
+    box-shadow: 0px 3px 8px -4px rgba(0,0,0,0.15);
+    padding: 0 calc(50vw - 640px);
+    z-index: 999;
+    height: 8.0625rem;
+    background: white;
+    width: 100%;
+    .back {
+        text-decoration: none;
+        color: rgba(0,0,0,0.4);
+        cursor: pointer;
+        display: inline-block;
+        font-size: 1rem;
+        line-height: 24px;
+        font-weight: 500;
+        -moz-osx-font-smoothing: grayscale;
+        -webkit-font-smoothing: antialiased;
+        padding: 10px 20px 12px;
+        position: relative;
+        text-align: center;
+        transition: .2s;
+        display: inline-flex;
+        align-content: center;
+        align-items: center;
+        &:hover {
+            color: rgba(0,0,0,0.6);
+        }
+    }
+    h2 {
+        font-weight: 500;
+        color: #525252;
+        -moz-osx-font-smoothing: grayscale;
+        -webkit-font-smoothing: antialiased;
+        font-size: 32px;
+        width: 100%;
+        text-align: center;
+        position: relative;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
+}
+.filters {
+    height: 4rem;
+    max-width: 1280px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    align-content: center;
+    @media screen and (max-width: 640px) {
+        justify-content: center;
+    }
+    &__group {
+        height: 30px;
+        background: rgba(0,0,0,0.05);
+        border-radius: 50px;
+        a {
+            color: #999999;
+            text-decoration: none;
+            display: inline-block;
+            cursor: pointer;
+            font-size: 16px;
+            padding: 4px 10px;
+            position: relative;
+            font-weight: 300;
+            transition: .2s;
+            &.active {
+                color: white;
+                border-radius: 50px;
+                padding: 4px 14px;
+                background-color: rgba(0,0,0,0.25);
+            }
+        }
+    }
+}
+.products {
+    width: 100%;
+    max-width: 1280px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    @media screen and (min-width: 640px) and (max-width: 992px){
+        padding: 0 15px;
+    }
+}
+.product-card {
+    display: flex;
+    width: 320px;
+    background: white;
+    flex-wrap: wrap;
+    justify-content: center;
+    box-shadow: 0px 3px 8px -4px rgba(0,0,0,0.15);
+    transition: .2s;
+    width: 24%;
+    margin-bottom: 1rem;
+
+    @media screen and (min-width: 640px) and (max-width: 992px){
+        width: 30%;
+    }
+
+    @media screen and (max-width: 640px){
+        width: 60%;
+        margin: 0 auto 1rem;
+    }
+
+    &:focus {
+        outline: none;
+    }
+    &:hover {
+        cursor: pointer;
+        transform: translateY(-4px);
+        box-shadow: 0 22px 43px rgba(0,0,0,0.15);
+    }
+    .price {
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        height: 3rem;
+        span {
+            // background: #2fdab8;
+            color: #2fdab8;
+            // color: #fff;
+            font-size: 20px;
+            line-height: 3rem;
+            padding: 0 1rem;
+        }
+    }
+    img {
+        width: 60%;
+        height: 60%;
+        &:focus {
+            outline: none;
+        }
+    }
+    .desc {
+        width: 100%;
+        margin: .5rem 1rem;
+        font-size: 15px;
+        color: #b3b3b3;
+        font-weight: 400;
+        text-overflow: ellipsis;
+        box-shadow: 0px 1px 1px #f9f9f9;
+    }
+    .controls {
+        align-items: center;
+        [mat-icon-button] {
+            color: #999;
+        }
+        [mat-raised-button] {
+            background-color: #2fdab8;
+            color: white;
+            font-weight: 700;
+            font-size: 1.01rem;
+            height: 2.2rem;
+            line-height: 2.2rem;
+            mat-icon {
+                margin-left: .5rem;
+            }
+        }
+        display: flex;
+        margin: 0 .5rem .5rem;
+        width: 100%;
+        justify-content: flex-end;
+        .extender {
+            flex: 1 1 auto;
+        }
+        .likes_count {
+            line-height: 43px;
+            color: #999;
+        }
+        span {
+            line-height: 40px;
+        }
+    }
+}
+.liked {
+    color: red;
+}

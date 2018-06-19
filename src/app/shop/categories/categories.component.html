@@ -1,0 +1,7 @@
+<h3>Категорії</h3>
+<section class="categories">
+    <div class="category" *ngFor="let item of categories" routerLink="/category/{{item?.id}}">
+      <img src="{{item?.image}}" alt="cake">
+      <p>{{item?.name}}</p>
+    </div>
+</section>

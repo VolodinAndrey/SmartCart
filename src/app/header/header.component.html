@@ -1,0 +1,11 @@
+<a routerLink="">Головна</a>
+<a routerLink="/categories">Магазин</a>
+<div style='flex: 1 1 auto'></div>
+<app-search></app-search>
+<a *ngIf="!user.username" class='login' routerLink="/auth">Вхід</a>
+<a *ngIf="user.username" routerLink="/auth">Привіт {{user.username}}</a>
+<a *ngIf="user.username" class='login' (click)="logout()">Вийти</a>
+<button routerLink="cart" mat-icon-button class="cart">
+  <mat-icon>shopping_cart</mat-icon>
+  <span>{{count}}</span>
+</button>

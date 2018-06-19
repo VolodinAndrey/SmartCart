@@ -1,0 +1,114 @@
+:host {
+    display: flex;
+    width: 100%;
+    align-content: flex-start;
+    align-items: flex-start;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 0 calc(50vw - 640px);
+    margin-top: 2rem;
+}
+.cart {
+    padding: 1rem;
+    background: white;
+    width: 100%;
+    height: 100%;
+    h2 {
+        width: 100%;
+        font-weight: 300;
+    }
+}
+.products {
+    display: flex;
+    list-style: none;
+    width: 100%;
+    flex-wrap: wrap;
+    li {
+        width: 100%;
+        padding: 1rem 0;
+        border-bottom: 1px solid #eee;
+        display: inline-flex;
+        height: 5rem;
+        align-items: center;
+        justify-content: flex-start;
+        @media screen and (max-width: 640px){
+            flex-wrap: wrap;
+            height: auto;
+            max-height: 300px;
+        }
+        &.no_border {
+            border-bottom: none;
+            @media screen and (max-width: 640px){
+                .extender{
+                    display: none;
+                }
+            }
+        }
+        .products__header{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            width: 100%;
+            @media screen and (min-width: 640px){
+                width: 50%;
+                flex-direction: row;
+            }
+        }
+        .products__bottom{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            @media screen and (min-width: 640px){
+                width: 50%;
+                justify-content: flex-end;
+            }
+        }
+        img {
+            max-width: 30%;
+            width: 100%;
+            height: 100%;
+
+        }
+        p.name {
+            max-width: 70%;
+            width: 100%;
+            @media screen and (max-width: 640px){
+               max-width: 100%;
+                text-align: center;
+            }
+        }
+        p.count {
+            margin: 0;
+            padding: 0;
+        }
+        p {
+            padding: .7rem;
+            margin: 0 1rem;
+            font-size: 1.2rem;
+            font-weight: 300;
+        }
+    }
+}
+.price {
+    min-width: 50px;
+}
+.mat-card-actions {
+    display: flex;
+    justify-content: flex-end;
+    margin: 1rem;
+    margin-bottom: 1rem!important;
+}
+[mat-raised-button] {
+    background-color: #2fdab8;
+    color: white;
+    font-weight: 700;
+    font-size: 1.01rem;
+    height: 2.2rem;
+    line-height: 2.2rem;
+}
+.extender {
+    display: flex;
+    flex: 1 1 auto;
+}
